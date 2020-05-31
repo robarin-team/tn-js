@@ -1,17 +1,6 @@
-const parseWords = text => {
-  if (!text || text === '') return false;
+const timestamp = parseInt(prompt('Введите временную метку', 534338229)).toString(16)
+const claster = parseInt(prompt('Введите кластер', 58)).toString(16)
+const type = parseInt(prompt('Введите тип', 10)).toString(16)
+const userId = parseInt(prompt('Введите идентификатор пользователя', 139771391)).toString(16)
 
-  const result = text.split(' ').map(word => {
-    let sum = 0;
-    for (let i in word) { sum += word.charCodeAt(i) }
-
-    return {
-      word,
-      sum
-    }
-  })
-
-  return result;
-}
-
-console.log(parseWords('Lorem ipsum dolor sit amet.'));
+alert(`${timestamp}${claster}${type}${userId}`)
