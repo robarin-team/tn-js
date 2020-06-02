@@ -14,16 +14,16 @@ const nodeTree2 = (nodeList, indent = '') => {
   console.log(nodeOutput(nodeList, indent));
 
   for (let node of nodeList.childNodes) {
-    nodeTree1(node, indent += ' ');
+    nodeTree2(node, indent += ' ');
   }
 }
 
 const nodeTree3 = (nodeList, indent = '') => {
   console.log(nodeOutput(nodeList, indent));
-  let node = nodeList;
+  let node = nodeList.firstChild;
 
-  while (node && node.firstChild) {
-    nodeTree1(nodeList, indent += ' ');
+  while (node) {
+    nodeTree3(node, indent += ' ');
     node = node.nextSibling;
   }
 }
