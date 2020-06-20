@@ -28,7 +28,6 @@ const handleDraw = (e) => {
   if (event.target.tagName !== "TD") return;
 
   if (e.shiftKey) {
-    console.log(currentColor)
     e.target.style.backgroundColor = currentColor;
   }
 };
