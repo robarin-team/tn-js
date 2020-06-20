@@ -19,11 +19,11 @@ buyTicketform.addEventListener('submit', (e) => {
   }, {});
 
   ticketData.fullName = userName;
-  ticketData.buyTime = makeTime(11, 0);
+  ticketData.buyTime = new Date().getTime();
 
   try {
     const { flightName, buyTime, fullName, type } = ticketData;
-    
+
     const result = buyTicket(flightName, buyTime, fullName, parseInt(type));
     const { seat, id } = result;
 

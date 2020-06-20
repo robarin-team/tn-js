@@ -30,6 +30,10 @@ const handleDraw = (e) => {
   if (e.shiftKey) {
     e.target.style.backgroundColor = currentColor;
   }
+
+  if (e.ctrlKey) {
+    e.target.style.backgroundColor = 'transparent';
+  }
 };
 
 document.getElementById("container").prepend(createTable(30));
