@@ -11,30 +11,30 @@ function Ship(name, model, position = { x: 0, y: 0 }) {
 
     this.move  = function (direction) {
     	if (_isAnchorDroped)
-            throw new Error('Anchor must be rised');
+    		throw new Error('Anchor must be rised');
 
 
     	if (!['n', 'e', 's', 'w'].includes(direction))
-            throw new Error('Invalid direction was passed');
+    		throw new Error('Invalid direction was passed');
 
-        switch(direction) {
-        	case 'n':
-        		this.position.y += 1;
-        		break;
-        	case 'e':
-        		this.position.x += 1;
-        		break;
-        	case 's':
-        		this.position.y -= 1;
-        		break;
-        	case 'w':
-        		this.position.x -= 1;
-        		break;
-        }
+      switch(direction) {
+      	case 'n':
+      		this.position.y += 1;
+      		break;
+      	case 'e':
+      		this.position.x += 1;
+      		break;
+      	case 's':
+      		this.position.y -= 1;
+      		break;
+      	case 'w':
+      		this.position.x -= 1;
+      		break;
+      }
 
-        this.distance += 1;
+      this.distance += 1;
 
-        return true;
+      return true;
     }
 
     this.moveTo = function (position) {

@@ -6,7 +6,7 @@
 
 const marine = {
 	ships: [],
-    docks: [],
+	docks: [],
 };
 
 window['marine'] = marine;
