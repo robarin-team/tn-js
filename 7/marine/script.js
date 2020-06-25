@@ -3,14 +3,12 @@
 const ship1 = new Ship('Voyager', 'Passenger', {x: 10, y: 10});
 const ship2 = new Ship('Explorer', 'Cargo', {x: 30, y: 20});
 
-marine.ships.push(ship1);
-marine.ships.push(ship2);
+marine.ships.push(ship1, ship2);
 
 const dock1 = new Dock({x: 12, y: 13});
 const dock2 = new Dock({x: 31, y: 22});
 
-marine.docks.push(dock1);
-marine.docks.push(dock1);
+marine.docks.push(dock1, dock2);
 
 const dock1Position = dock1.position();
 const dock2Position = dock2.position();
