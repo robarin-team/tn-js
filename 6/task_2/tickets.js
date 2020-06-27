@@ -1,22 +1,21 @@
 const buyTicketform = document.getElementById("buy_ticket");
 
-buyTicketform.addEventListener('submit', (e) => {
+buyTicketform.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const form = e.target;
-  const flightFields = ['flightName', 'type'];
-  const userFields = ['firstName', 'lastName', 'middleName'];
+  const userName = ["firstName", "lastName", "middleName"]
+    .map((field) => {
+      if (form.elements[field]) {
+        return form.elements[field].value;
+      }
+    })
+    .join(" ");
 
-  const userName = userFields.map(field => {
-    if (form.elements[field]) {
-      return form.elements[field].value;
-    }
-  }).join(' ');
-
-  const ticketData = flightFields.reduce((data, fieldName) => {
-    data[fieldName] = form.elements[fieldName].value;
-    return data;
-  }, {});
+  const ticketData = {
+    flightName: form.elements["flightName"].value,
+    type: form.elements["type"].value,
+  };
 
   ticketData.fullName = userName;
   ticketData.buyTime = new Date().getTime();
@@ -29,7 +28,7 @@ buyTicketform.addEventListener('submit', (e) => {
 
     alert(`Your seat: ${seat}, ticket number: ${id}`);
     form.reset();
-  } catch(e) {
+  } catch (e) {
     alert(e.message);
   }
 });
