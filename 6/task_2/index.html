@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 6</title>
+    <style>
+      #buy_ticket {
+        width: 500px;
+      }
+
+      #buy_ticket > input[type="text"] {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px;
+      }
+
+      #buy_ticket .form-actions {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <form id="buy_ticket">
+        <label for="flightName">Flight number:</label>
+        <input type="text" name="flightName" required />
+
+        <label for="firstName">First name:</label>
+        <input type="text" name="firstName" required />
+
+        <label for="lastName">Last name:</label>
+        <input type="text" name="lastName" required />
+
+        <label for="middleName">Middle name:</label>
+        <input type="text" name="middleName" required />
+
+        <label for="type">Seat type:</label>
+        <select name="type">
+          <option value="0">Standard</option>
+          <option value="1">Business</option>
+        </select>
+        
+        <div class="form-actions">
+          <input type="submit" value="Buy">
+        </div>
+      </form>
+    </div>
+
+    <script src="flights.js"></script>
+    <script src="tickets.js"></script>
+  </body>
+</html>
